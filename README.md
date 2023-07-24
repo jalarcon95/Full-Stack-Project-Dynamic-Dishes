@@ -9,6 +9,7 @@
 * [Installation](#install)
 * [Usage](#usage)
 * [Credits](#credits)
+
 * [Testing](#test)
   
 * [License](#license)
@@ -25,6 +26,7 @@
 ## [Credits](#table-of-contents)
 
 John Alarcon Github: https://github.com/jalarcon95 Email: n/a
+Marianna Bruns Github: https://github.com/marbfree Email: n/a
 
 ## [Testing](#table-of-contents)
 
