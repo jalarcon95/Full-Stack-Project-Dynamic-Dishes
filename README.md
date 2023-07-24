@@ -27,7 +27,7 @@
 
 John Alarcon Github: https://github.com/jalarcon95 Email: n/a
 Marianna Bruns Github: https://github.com/marbfree Email: n/a
-
+Chase Williams Github: https://github.com/Cwill290 Email: n/a
 ## [Testing](#table-of-contents)
 
 n/a
