@@ -20,10 +20,10 @@
 
 ## [Credits](#table-of-contents)
 
-John Alarcon Github: https://github.com/jalarcon95 Email: n/a
-Marianna Bruns Github: https://github.com/marbfree Email: n/a
-Chase Williams Github: https://github.com/Cwill290 Email: n/a
-Karen Andrade Github: https://github.com/vixtoriandrade Email: n/a
+- John Alarcon Github: https://github.com/jalarcon95 Email: n/a
+- Marianna Bruns Github: https://github.com/marbfree Email: n/a
+- Chase Williams Github: https://github.com/Cwill290 Email: n/a
+- Karen Andrade Github: https://github.com/vixtoriandrade Email: n/a
 
 ## [Testing](#table-of-contents)
 

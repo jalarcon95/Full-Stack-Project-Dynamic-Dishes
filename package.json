@@ -1,0 +1,24 @@
+{
+  "name": "full-stack-project-dynamic-dishes",
+  "version": "1.0.0",
+  "description": "![badge](https://img.shields.io/badge/license-mit-blue)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jalarcon95/Full-Stack-Project-Dynamic-Dishes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jalarcon95/Full-Stack-Project-Dynamic-Dishes/issues"
+  },
+  "homepage": "https://github.com/jalarcon95/Full-Stack-Project-Dynamic-Dishes#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.5.2"
+  }
+}
