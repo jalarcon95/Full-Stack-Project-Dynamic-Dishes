@@ -1,0 +1,20 @@
+h1 {
+    font-family: Snell Roundhand, cursive, Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
+    text-decoration: underline;
+    text-shadow: yellow 25px, 25px;
+    font-size: 4em;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60000, 0 0 40px #e60000, 0 0 50px #e60000, 0 0 60px #e60000, 0 0 70px #e60000;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4d62, 0 0 40px #ff4d62, 0 0 50px #ff4d62, 0 0 60px #ff4d62, 0 0 70px #ff4d62, 0 0 80px #ff4d62;
+  }
+}
