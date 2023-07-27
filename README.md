@@ -24,6 +24,7 @@
 - Marianna Bruns Github: https://github.com/marbfree Email: n/a
 - Chase Williams Github: https://github.com/Cwill290 Email: n/a
 - Karen Andrade Github: https://github.com/vixtoriandrade Email: n/a
+- Isoel Rodriguez Github:https://github.com/Isoel Email: n/a
 
 ## [Testing](#table-of-contents)
 
