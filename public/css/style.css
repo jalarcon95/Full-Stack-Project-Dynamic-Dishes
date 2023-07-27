@@ -1,9 +1,14 @@
+body {
+  background-color: red;
+}
+
 h1 {
     font-family: Snell Roundhand, cursive, Verdana, Geneva, Tahoma, sans-serif;
-    color: red;
+    color: #ffc400;
     text-decoration: underline;
-    text-shadow: yellow 25px, 25px;
-    font-size: 4em;
+    text-shadow: rgb(3, 3, 0) 50px, 50px;
+    text-decoration: solid black;
+    font-size: 5em;
     text-align: center;
     -webkit-animation: glow 1s ease-in-out infinite alternate;
     -moz-animation: glow 1s ease-in-out infinite alternate;
@@ -12,9 +17,15 @@ h1 {
 
 @-webkit-keyframes glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60000, 0 0 40px #e60000, 0 0 50px #e60000, 0 0 60px #e60000, 0 0 70px #e60000;
+    text-shadow: 0 0 10px #ffc400, 0 0 20px #fff, 0 0 30px #ffc400, 0 0 40px #ffc400, 0 0 50px #ffc400, 0 0 60px #ffc400, 0 0 70px #ffc400;
   }
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4d62, 0 0 40px #ff4d62, 0 0 50px #ff4d62, 0 0 60px #ff4d62, 0 0 70px #ff4d62, 0 0 80px #ff4d62;
+    text-shadow: 0 0 20px #ffc400, 0 0 30px #ffc400, 0 0 40px #ffc400, 0 0 50px #ffc400, 0 0 60px #ffc400, 0 0 70px #ffc400, 0 0 80px #ffc400;
   }
+}
+
+h2 {
+  color: red;
+  font-family: Snell Roundhand, cursive, Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2em
 }
