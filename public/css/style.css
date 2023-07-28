@@ -1,14 +1,14 @@
 body {
   background-color: red;
+  font-family: Snell Roundhand, cursive, Verdana, Geneva, Tahoma, sans-serif;
 }
 
 h1 {
-    font-family: Snell Roundhand, cursive, Verdana, Geneva, Tahoma, sans-serif;
     color: #ffc400;
     text-decoration: underline;
     text-shadow: rgb(3, 3, 0) 50px, 50px;
     text-decoration: solid black;
-    font-size: 5em;
+    font-size: 6em;
     text-align: center;
     -webkit-animation: glow 1s ease-in-out infinite alternate;
     -moz-animation: glow 1s ease-in-out infinite alternate;
@@ -26,6 +26,5 @@ h1 {
 
 h2 {
   color: red;
-  font-family: Snell Roundhand, cursive, Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 2em
+  font-size: 3em
 }
