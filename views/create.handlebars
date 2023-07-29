@@ -1,32 +1,22 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
-  </div>
-</div>
-
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Recipe:</h3>
-
-    <form class="form new-recipe-form">
-      <div class="form-group">
-        <label for="recipe-name">Recipe Title:</label>
-        <input class="form-input" type="text" id="recipe-name" name="recipe-name" />
+    <nav>
+        <a class="px-5 text-dark fs-4 d-flex justify-content-end" href="/#(homepage)">Homepage</a>
+    </nav>
+    <div class="mb-3 mx-auto col-sm-8 text-center">
+        <label for="formGroupExampleInput" class="form-label fs-3">Title</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Input Title here">
       </div>
-      <div class="form-group">
-        <label for="recipe-ingre">Ingredients:</label>
-        <input class="form-input" type="number" id="recipe-ingredients" name="recipe-ingredients" />
+      <div class="mb-3 mx-auto col-sm-8 text-center">
+        <label for="formGroupExampleInput2" class="form-label fs-3">Ingredients</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Input Ingredients here">
       </div>
-      <div class="form-group">
-        <label for="recipe-instruct">instructions:</label>
-        <textarea class="form-input" id="recipe-instructions" name="recipe-instructions"></textarea>
+      <div class="mb-3 mx-auto col-sm-8 text-center">
+        <label for="formGroupExampleInput2" class="form-label fs-3">Instructions</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Input Instructions here">
       </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+      <div class="form-group mx-auto col-sm-1 pt-5">
+        <button type="submit" class="btn btn-warning">Create</button>
       </div>
-    </form>
-  </div>
-
+{{!-- 
   {{#if recipes.length}}
   <div class="col-md-6 recipe-list">
     <h3>Current Recipies:</h3>
@@ -45,4 +35,4 @@
   {{/if}}
 </div>
 
-<script src="./js/create.js"></script>
+<script src="./js/recipes.js"></script> --}}
