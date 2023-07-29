@@ -8,18 +8,18 @@
   <div class="col-md-6">
     <h3>Create a New Recipe:</h3>
 
-    <form class="form new-project-form">
+    <form class="form new-recipe-form">
       <div class="form-group">
-        <label for="project-name">Recipe Title:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+        <label for="recipe-name">Recipe Title:</label>
+        <input class="form-input" type="text" id="recipe-name" name="recipe-name" />
       </div>
       <div class="form-group">
         <label for="recipe-ingre">Ingredients:</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+        <input class="form-input" type="number" id="recipe-ingredients" name="recipe-ingredients" />
       </div>
       <div class="form-group">
         <label for="recipe-instruct">instructions:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+        <textarea class="form-input" id="recipe-instructions" name="recipe-instructions"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
@@ -28,7 +28,7 @@
   </div>
 
   {{#if recipes.length}}
-  <div class="col-md-6 project-list">
+  <div class="col-md-6 recipe-list">
     <h3>Current Recipies:</h3>
 
     {{#each recipes as |recipe|}}
@@ -45,4 +45,4 @@
   {{/if}}
 </div>
 
-<script src="./js/profile.js"></script>
+<script src="./js/create.js"></script>
