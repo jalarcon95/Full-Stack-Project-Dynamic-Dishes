@@ -1,48 +1,24 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
-  </div>
-</div>
+{{#if recipes.length}}
+<div class="col-md-12 recipe-list text-center mt-5">
+  <h3>Current Recipies:</h3>
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Recipe:</h3>
-
-    <form class="form new-project-form">
-      <div class="form-group">
-        <label for="project-name">Recipe Title:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
-      </div>
-      <div class="form-group">
-        <label for="recipe-ingre">Ingredients:</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
-      </div>
-      <div class="form-group">
-        <label for="recipe-instruct">instructions:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
-
-  {{#if recipes.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
-
-    {{#each recipes as |recipe|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{recipe.id}}">{{recipe.title}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{recipe.id}}">DELETE</button>
-      </div>
+  {{#each recipes as |recipe|}}
+  <div class="row card col-md-8 mx-auto">
+    <div class="col-md-8 mx-auto mt-3">
+      <h4><a href="/recipe/{{recipe.id}}">{{recipe.title}}</a></h4>
+      <p>{{recipe.ingredients}}</p>
+      <p>{{recipe.instructions}}</p>
     </div>
-    {{/each}}
+    <div class="col-md-4 mx-auto">
+      <button class="btn btn-sm btn-danger mb-3 mt-3" data-id="{{recipe.id}}">DELETE</button>
+    </div>
   </div>
-  {{/if}}
+  {{/each}}
 </div>
+{{/if}}
+<div><a href="./create.handlebars">Create a New Recipe</a></div>
 
-<script src="./js/profile.js"></script>
+
+<script src="./js/recipe.js"></script>
+
+
