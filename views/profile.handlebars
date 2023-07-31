@@ -1,3 +1,5 @@
+<a class="d-flex justify-content-end px-5 text-dark fs-4" href="./create.handlebars">Create a New Recipe</a>
+<h3 class="text-center mt-5 col-md-12">Welcome, {{user.username}}</h3>
 {{#if recipes.length}}
 <div class="col-md-12 recipe-list text-center mt-5">
   <h3>Current Recipies:</h3>
@@ -9,16 +11,16 @@
       <p>{{recipe.ingredients}}</p>
       <p>{{recipe.instructions}}</p>
     </div>
-    <div class="col-md-4 mx-auto">
+    <div class="col-md-4 mx-auto recipe-list">
       <button class="btn btn-sm btn-danger mb-3 mt-3" data-id="{{recipe.id}}">DELETE</button>
     </div>
   </div>
   {{/each}}
 </div>
 {{/if}}
-<div><a href="./create.handlebars">Create a New Recipe</a></div>
 
 
-<script src="./js/recipe.js"></script>
+
+<script src="public/js/profile.js"></script>
 
 
