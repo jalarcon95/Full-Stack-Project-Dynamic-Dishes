@@ -23,6 +23,12 @@ const Recipe = sequelize.define('Recipe', {
     type: DataTypes.TEXT,
     allowNull: false,
   },
+}, {
+ 
+  timestamps: true,
+  freezeTableName: true,
+  underscored: true,
+  modelName: 'recipe',
 });
 
 module.exports = Recipe;
