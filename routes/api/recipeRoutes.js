@@ -1,16 +1,16 @@
 const express = require('express');
-const router = express.Router(); 
-const { generateTimestamp } = require('./helper');
+const app = express();
+const port = 3000; 
 
+app.use(express.json());
 
-let recipes = [];
 
 // Define routes
-router.get('/recipes', (req, res) => {
+app.get('/recipes', (req, res) => {
   res.json(recipes);
 });
 
-router.get('/recipes/:id', (req, res) => {
+app.get('/recipes/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const recipe = recipes.find((r) => r.id === id);
 
@@ -21,17 +21,16 @@ router.get('/recipes/:id', (req, res) => {
   res.json(recipe);
 });
 
-router.post('/recipes', (req, res) => {
+app.post('/recipes', (req, res) => {
   const { name, ingredients } = req.body;
   const id = recipes.length + 1;
-  const createdAt = generateTimestamp(); 
-  const newRecipe = { id, name, ingredients, createdAt }; 
+  const newRecipe = { id, name, ingredients };
 
   recipes.push(newRecipe);
   res.status(201).json(newRecipe);
 });
 
-router.put('/recipes/:id', (req, res) => {
+app.put('/recipes/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const recipe = recipes.find((r) => r.id === id);
 
@@ -46,7 +45,7 @@ router.put('/recipes/:id', (req, res) => {
   res.json(recipe);
 });
 
-router.delete('/recipes/:id', (req, res) => {
+app.delete('/recipes/:id', (req, res) => {
   const id = parseInt(req.params.id);
   recipes = recipes.filter((r) => r.id !== id);
   res.status(204).end();
