@@ -17,13 +17,15 @@
         <a class="text-dark" href="/views/profile.handlebars">Profile</a> |
         <button class="no-button bg-warning rounded border-right" id="logout">Logout</button>
         {{else}}
-        <a class="text-dark" href="/views/login.handlebars">Login</a>
+        <a class="text-dark" href="/login">Login</a>
         {{/if}}
     </nav>
 
-    <h1 class="mt-1">Dynamic Dishes</h1>
+    <h1 class="mt-1">
+        <a class="text-warning" href="/">Dynamic Dishes</a>
+    </h1>
     <h2 class="text-white text-center">Where everyone's a chef!</h2>
-     <main class="container container-fluid mt-5 card text-center"> 
+     <main class="container container-fluid mt-5 text-center"> 
         <!-- Render the sub layout -->
         {{{ body }}}
     <!-- Render script for logged in users only -->
