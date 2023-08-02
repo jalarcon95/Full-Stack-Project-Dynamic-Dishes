@@ -1,55 +1,63 @@
-const router = require('express').Router();
-const express = require('express');
-const app = express();
-const port = 3000; 
+// ---->  /api/users
 
-app.use(express.json());
+const router = require("express").Router();
+const Recipe = require("../../models/recipe")
 
+router.get("/all", (req, res) => {
+    Recipe.findAll()
+    .then(results => {
+        res.json(results)
+    })
+})
 
-// Define routes
-app.get('/recipes', (req, res) => {
-  res.json(recipes);
-});
+router.get("/:id", (req, res) => {
+    Recipe.findByPk(req.params.id)
+    .then(results => {
+        res.json(results)
+    })
+})
 
-app.get('/recipes/:id', (req, res) => {
-  const id = parseInt(req.params.id);
-  const recipe = recipes.find((r) => r.id === id);
+router.post("/create", (req, res) => {
+    Recipe.create({
+        title: req.body.title,
+        description: req.body.description,
+        ingredients: req.body.ingredients,
+        instructions: req.body.instructions
+    })
+    .then(result => {
+        res.json(result)
+    })
+})
 
-  if (!recipe) {
-    return res.status(404).json({ message: 'Recipe not found' });
-  }
+router.put("/:id", (req, res) => {
+    Recipe.update(
+        {
+            title: req.body.title,
+            description: req.body.description,
+            ingredients: req.body.ingredients,
+            instructions: req.body.instructions
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        }
+    )
+    .then(result => {
+        res.json(result)
+    })
+})
 
-  res.json(recipe);
-});
+router.delete("/:id", (req, res) => {
+    Recipe.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(result => {
+        res.json(result)
+    })
+})
 
-app.post('/recipes', (req, res) => {
-  const { name, ingredients } = req.body;
-  const id = recipes.length + 1;
-  const newRecipe = { id, name, ingredients };
-
-  recipes.push(newRecipe);
-  res.status(201).json(newRecipe);
-});
-
-app.put('/recipes/:id', (req, res) => {
-  const id = parseInt(req.params.id);
-  const recipe = recipes.find((r) => r.id === id);
-
-  if (!recipe) {
-    return res.status(404).json({ message: 'Recipe not found' });
-  }
-
-  const { name, ingredients } = req.body;
-  recipe.name = name;
-  recipe.ingredients = ingredients;
-
-  res.json(recipe);
-});
-
-app.delete('/recipes/:id', (req, res) => {
-  const id = parseInt(req.params.id);
-  recipes = recipes.filter((r) => r.id !== id);
-  res.status(204).end();
-});
 
 module.exports = router;
