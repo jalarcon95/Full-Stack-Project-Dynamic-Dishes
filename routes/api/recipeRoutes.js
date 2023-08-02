@@ -1,54 +1,57 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+
 const app = express();
-const port = 3000; 
 
-app.use(express.json());
+app.use(bodyParser.json());
 
+let recipes = [
+  { id: 1, title: 'Pasta Carbonara', ingredients: ['pasta', 'eggs', 'cheese', 'bacon'] },
+  { id: 2, title: 'Chicken Curry', ingredients: ['chicken', 'coconut milk', 'spices'] },
+];
 
-// Define routes
 app.get('/recipes', (req, res) => {
   res.json(recipes);
 });
 
-app.get('/recipes/:id', (req, res) => {
-  const id = parseInt(req.params.id);
-  const recipe = recipes.find((r) => r.id === id);
 
-  if (!recipe) {
-    return res.status(404).json({ message: 'Recipe not found' });
+app.get('/recipes/:recipeId', (req, res) => {
+  const recipeId = parseInt(req.params.recipeId);
+  const recipe = recipes.find((r) => r.id === recipeId);
+  if (recipe) {
+    res.json(recipe);
+  } else {
+    res.status(404).json({ error: 'Recipe not found' });
   }
-
-  res.json(recipe);
 });
 
-app.post('/recipes', (req, res) => {
-  const { name, ingredients } = req.body;
-  const id = recipes.length + 1;
-  const newRecipe = { id, name, ingredients };
 
+app.post('/recipes', (req, res) => {
+  const newRecipe = req.body;
+  newRecipe.id = recipes.length + 1;
   recipes.push(newRecipe);
   res.status(201).json(newRecipe);
 });
 
-app.put('/recipes/:id', (req, res) => {
-  const id = parseInt(req.params.id);
-  const recipe = recipes.find((r) => r.id === id);
-
-  if (!recipe) {
-    return res.status(404).json({ message: 'Recipe not found' });
+app.put('/recipes/:recipeId', (req, res) => {
+  const recipeId = parseInt(req.params.recipeId);
+  const updatedRecipe = req.body;
+  const recipeIndex = recipes.findIndex((r) => r.id === recipeId);
+  if (recipeIndex !== -1) {
+    recipes[recipeIndex] = { ...recipes[recipeIndex], ...updatedRecipe, id: recipeId };
+    res.json(recipes[recipeIndex]);
+  } else {
+    res.status(404).json({ error: 'Recipe not found' });
   }
-
-  const { name, ingredients } = req.body;
-  recipe.name = name;
-  recipe.ingredients = ingredients;
-
-  res.json(recipe);
 });
 
-app.delete('/recipes/:id', (req, res) => {
-  const id = parseInt(req.params.id);
-  recipes = recipes.filter((r) => r.id !== id);
+app.delete('/recipes/:recipeId', (req, res) => {
+  const recipeId = parseInt(req.params.recipeId);
+  recipes = recipes.filter((r) => r.id !== recipeId);
   res.status(204).end();
 });
 
-module.exports = router;
+const port = 3000;
+app.listen(port, () => {
+    console.log(`Recipe API server is running on http://localhost:${port}`);
+})
