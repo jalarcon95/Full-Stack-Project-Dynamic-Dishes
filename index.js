@@ -8,9 +8,10 @@ dotenv.config();
     await sequelize.authenticate();
     console.log('Connection has been established successfully.');
 
-    // Your further code and logic can go here
+ //Your further code and logic can go here
 
   } catch (error) {
     console.error('Unable to connect to the database:', error);
-  }
-})();
+   }
+ })();
+
