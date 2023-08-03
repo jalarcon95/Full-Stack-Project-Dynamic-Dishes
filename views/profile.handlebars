@@ -1,10 +1,11 @@
-<a class="d-flex justify-content-end px-5 text-dark fs-4" href="./create.handlebars">Create a New Recipe</a>
+<a class="d-flex justify-content-end px-5 text-dark fs-4" href="/create-recipe">Create a New Recipe</a>
 <h3 class="text-center mt-5 col-md-12">Welcome, {{username}}</h3>
-{{#if recipes.length}}
-<div class="col-md-12 recipe-list text-center mt-5">
-  <h3>Current Recipies:</h3>
+{{!-- {{#if recipes.length}} --}}
+{{!-- <div class="col-md-12 recipe-list text-center mt-5"> --}}
+  <h3>Current Recipes:</h3>
+{{#if Recipes.length}}
 
-  {{#each recipes as |recipe|}}
+  {{#each Recipes as |recipe|}}
   <div class="row card col-md-8 mx-auto">
     <div class="col-md-8 mx-auto mt-3">
       <h4><a href="/recipe/{{recipe.id}}">{{recipe.title}}</a></h4>
@@ -12,7 +13,7 @@
       <p>{{recipe.instructions}}</p>
     </div>
     <div class="col-md-4 mx-auto recipe-list">
-      <button class="btn btn-sm btn-danger mb-3 mt-3" data-id="{{recipe.id}}">DELETE</button>
+      <button type="submit" class="btn btn-sm btn-danger mb-3 mt-3" data-id="{{recipe.id}}">DELETE</button>
     </div>
   </div>
   {{/each}}

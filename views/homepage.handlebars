@@ -10,7 +10,7 @@
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
       <a href="/recipe/{{recipe.id}}">{{recipe.title}}</a>
     </h2>
-    <p>Created by {{user.name}} on {{ recipe.date_created}}</p>
+    <p>Created by {{user.username}} on {{ recipe.date_created}}</p>
   </div>
   <div>
         <button id="thumbsUp" class="col-sm-1">👍</button>
@@ -21,3 +21,4 @@
 {{/each}}
 
 <script src="/js/button.js"></script>
+<script src="/js/profile.js"></script>

@@ -22,7 +22,8 @@ router.post("/create", (req, res) => {
         title: req.body.title,
         description: req.body.description,
         ingredients: req.body.ingredients,
-        instructions: req.body.instructions
+        instructions: req.body.instructions,
+        user_id: req.session.user_id
     })
     .then(result => {
         res.json(result)

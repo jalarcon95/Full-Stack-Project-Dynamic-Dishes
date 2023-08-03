@@ -2,7 +2,7 @@ const newFormHandler = async (event) => {
     event.preventDefault();
   
     const title = document.querySelector('#recipe-title').value.trim();
-    const description = document.querySelector('#recipe.descriptioin').value.trim();
+    const description = document.querySelector('#recipe.description').value.trim();
     const ingredients = document.querySelector('#recipe-ingredients').value.trim();
     const instructions = document.querySelector('#recipe-instructions').value.trim();
 
