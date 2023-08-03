@@ -12,10 +12,11 @@ router.post("/login", (req, res) => {
             const isPasswordCorrect = await user.checkPassword(req.body.password)
             
            if(isPasswordCorrect) {
-                req.session.save(() => {
-                    req.session.id = user.id;
-                    req.session.username = user.username;
-                    req.session.email = user.email;
+                req.session.save(async() => {
+                    const userData = await user.get({plain: true});
+                    req.session.user_id = userData.id;
+                    req.session.username = userData.username;
+                    req.session.email = userData.email;
 
                     res.json({ 
                         message: "You are now logged in!"
