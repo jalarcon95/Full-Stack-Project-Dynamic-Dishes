@@ -2,6 +2,7 @@
 
 const router = require("express").Router();
 const Recipe = require("../../models/recipe")
+const { generateTimestamp } = require('../../utils/day');
 
 router.get("/all", (req, res) => {
     Recipe.findAll()
@@ -18,12 +19,16 @@ router.get("/:id", (req, res) => {
 })
 
 router.post("/create", (req, res) => {
+
+    const date_created = generateTimestamp();
+
     Recipe.create({
         title: req.body.title,
         description: req.body.description,
         ingredients: req.body.ingredients,
         instructions: req.body.instructions,
-        user_id: req.session.user_id
+        user_id: req.session.user_id,
+        date_created,
     })
     .then(result => {
         res.json(result)
