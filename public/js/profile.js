@@ -39,9 +39,9 @@ const newFormHandler = async (event) => {
     }
   };
   
-  document
-    .querySelector('.new-recipe-form')
-    .addEventListener('submit', newFormHandler);
+  // document
+  //   .querySelector('.new-recipe-form')
+  //   .addEventListener('submit', newFormHandler);
   
   document
     .querySelector('.recipe-list')

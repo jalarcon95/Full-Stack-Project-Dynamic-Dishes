@@ -16,11 +16,12 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-console.log(recipes)
+    console.log(req.session.logged_in) 
+    console.log("======================")    
     // Pass serialized data and session flag into template
     res.render('homepage', { 
       recipes, 
-    //   logged_in: req.session.logged_in 
+      logged_in: req.session.logged_in 
     });
   } catch (err) {
     res.status(500).json(err);
@@ -41,11 +42,11 @@ router.get('/recipes', async (req, res) => {
   
       // Serialize data so the template can read it
       const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-  
+      
       // Pass serialized data and session flag into template
       res.render('homepage', { 
         recipes, 
-      //   logged_in: req.session.logged_in 
+        logged_in: req.session.logged_in 
       });
     } catch (err) {
       res.status(500).json(err);
@@ -54,13 +55,13 @@ router.get('/recipes', async (req, res) => {
 
   router.get('/create-recipe', async (req, res) => {
     try {
-        res.render('create')
+        res.render('create', {logged_in: req.session.logged_in})
     } catch (err) {
         res.status(500).json(err);
     }
   });
 
-router.get('/recipe/:id', async (req, res) => {
+router.get('/recipes/:id', async (req, res) => {
     try {
       const recipeData = await Recipe.findByPk(req.params.id, {
         include: [

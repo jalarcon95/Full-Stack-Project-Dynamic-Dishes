@@ -18,6 +18,7 @@ router.post("/login", (req, res) => {
                     req.session.user_id = userData.id;
                     req.session.username = userData.username;
                     req.session.email = userData.email;
+                    req.session.logged_in = true;
 
                     res.json({ 
                         message: "You are now logged in!"
@@ -32,7 +33,8 @@ router.post("/login", (req, res) => {
     })
 })
 
-router.delete("/logout", (req, res) => {
+
+router.post("/logout", (req, res) => {
     req.session.destroy();
 
     res.json({
