@@ -10,7 +10,7 @@ router.get("/all", (req, res) => {
     })
 })
 
-router.get("/:id", (req, res) => {
+router.get("/recipes/:id", (req, res) => {
     Recipe.findByPk(req.params.id)
     .then(results => {
         res.json(results)

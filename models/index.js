@@ -11,12 +11,4 @@ Recipe.belongsTo(User, {
     onDelete:`CASCADE`
 });
 
-// sequelize.sync({ force: false })
-//   .then(() => {
-//     console.log('Database and tables are synchronized.');
-//   })
-//   .catch((err) => {
-//     console.error('Error syncing database:', err);
-//   });
-
 module.exports = { User, Recipe };

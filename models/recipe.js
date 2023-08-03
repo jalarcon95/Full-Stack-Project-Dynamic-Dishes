@@ -33,6 +33,7 @@ const Recipe = sequelize.define('Recipe', {
   }
 }, {
  
+  sequelize,
   timestamps: true,
   freezeTableName: true,
   underscored: true,

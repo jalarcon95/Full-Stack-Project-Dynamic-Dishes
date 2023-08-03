@@ -60,7 +60,7 @@ router.get('/recipes', async (req, res) => {
     }
   });
 
-router.get('/recipe/:id', async (req, res) => {
+router.get('/recipes/:id', async (req, res) => {
     try {
       const recipeData = await Recipe.findByPk(req.params.id, {
         include: [
