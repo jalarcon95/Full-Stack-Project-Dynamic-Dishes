@@ -4,18 +4,20 @@
 
 <!-- Loop over each object in the projects array -->
 {{#each recipes as |recipe| }}
-<div class="row mb-4 recipe card">
-  <div class="col-md-5">
+<div class="row mb-4 recipe bg-warning card">
+  <div class="col-md-12 d-flex justify-content-center">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      <a href="/recipe/{{recipe.id}}">{{recipe.title}}</a>
+      <a class="text-dark" href="/recipe/{{recipe.id}}">{{recipe.title}}</a>
     </h2>
-    <p>Created by {{user.username}} on {{ recipe.date_created}}</p>
+    </div>
+  <div class="col-md-12 d-flex justify-content-center">\
+    <p>Created by {{user.username}} on {{ recipe.date_created }}</p>
   </div>
-  <div>
-        <button id="thumbsUp" class="col-sm-1">👍</button>
-        <p id="count"></p>
-        <button id="thumbsDown"class="col-sm-1">👎</button>
+  <div class="col-sm-12 d-flex justify-content-center">
+        <button id="thumbsUp" class="m-2">👍</button>
+        <p class="fs-2" id="count"></p>
+        <button id="thumbsDown"class="m-2">👎</button>
   </div>
 </div>
 {{/each}}
