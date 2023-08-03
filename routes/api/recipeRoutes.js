@@ -20,7 +20,7 @@ router.get("/recipes/:id", (req, res) => {
 
 router.post("/create", (req, res) => {
 
-    const date_created = generateTimestamp();
+    // const date_created = generateTimestamp();
 
     Recipe.create({
         title: req.body.title,
@@ -28,7 +28,7 @@ router.post("/create", (req, res) => {
         ingredients: req.body.ingredients,
         instructions: req.body.instructions,
         user_id: req.session.user_id,
-        date_created,
+        // date_created,
     })
     .then(result => {
         res.json(result)
