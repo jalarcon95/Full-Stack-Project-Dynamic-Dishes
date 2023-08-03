@@ -23,6 +23,14 @@ const Recipe = sequelize.define('Recipe', {
     type: DataTypes.TEXT,
     allowNull: false,
   },
+  user_id: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: "user",
+      key: "id"
+    },
+
+  }
 }, {
  
   timestamps: true,
