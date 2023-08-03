@@ -7,4 +7,5 @@ router.use("/users", userRoutes)
 router.use("/recipes", recipeRoutes)
 router.use("/auth", loginRoutes)
 
+
 module.exports = router;
