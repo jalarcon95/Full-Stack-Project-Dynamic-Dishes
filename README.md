@@ -24,6 +24,8 @@ Packages required: express, express-session, mysql2, sequelize, connect-session-
 
 When entering the app, users are presented with a landing page where they are able to browse from a list of recipes created by other users. Users can create an account or login to an existing account by clicking on the login button at the top-right corner of the page. In order to successfully login, the user must enter an email and password that was entered through the 'create account' prompt. Once logged in, the user is then redirected to the homepage, but this time with the ability to add new recipes and rate existing ones. 
 
+Heroku App Link: 
+
 ## [Credits](#table-of-contents)
 
 - John Alarcon Github: https://github.com/jalarcon95 Email: n/a
