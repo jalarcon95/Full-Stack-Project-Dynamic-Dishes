@@ -12,6 +12,7 @@ router.post("/login", (req, res) => {
             const isPasswordCorrect = await user.checkPassword(req.body.password)
             
            if(isPasswordCorrect) {
+
                 req.session.save(async() => {
                     const userData = await user.get({plain: true});
                     req.session.user_id = userData.id;
