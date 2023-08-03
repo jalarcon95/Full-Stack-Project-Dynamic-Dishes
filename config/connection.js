@@ -1,13 +1,18 @@
 const { Sequelize } = require('sequelize');
-
 const env = process.env.NODE_ENV || 'development';
-const config = require('./config')[env];
+const allConfigs = require('./config');
+const config = allConfigs[env] || allConfigs['development']; // Fallback to development
 
-const sequelize = new Sequelize(config.database, config.username, config.password, {
-   host: config.host,
-   dialect: config.dialect,
- });
-
+// Check for JAWSDB_URL and update config if found
+if (process.env.JAWSDB_URL) {
+  config.use_env_variable = 'JAWSDB_URL';
+}
+const sequelize = config.use_env_variable
+  ? new Sequelize(process.env[config.use_env_variable])
+  : new Sequelize(config.database, config.username, config.password, {
+      host: config.host,
+      dialect: config.dialect,
+    });
 (async () => {
   try {
     await sequelize.authenticate();
@@ -16,5 +21,4 @@ const sequelize = new Sequelize(config.database, config.username, config.passwor
     console.error('Unable to connect to the database:', error);
   }
 })();
-
 module.exports = sequelize;
