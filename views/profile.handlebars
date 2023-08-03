@@ -1,19 +1,22 @@
-<a class="d-flex justify-content-end px-5 text-dark fs-4" href="/create-recipe">Create a New Recipe</a>
 <h3 class="text-center mt-5 col-md-12">Welcome, {{username}}</h3>
+<a class="d-flex justify-content-center px-5 mb-5 text-dark fs-4" href="/create-recipe">Create a New Recipe</a>
+
 {{!-- {{#if recipes.length}} --}}
 {{!-- <div class="col-md-12 recipe-list text-center mt-5"> --}}
   <h3>Current Recipes:</h3>
 {{#if Recipes.length}}
 
   {{#each Recipes as |recipe|}}
-  <div class="row card col-md-8 mx-auto">
-    <div class="col-md-8 mx-auto mt-3">
+  <div class="row card col-md-8 mx-auto bg-warning">
+    <div class="col-md-8 mx-auto mt-3 fs-5">
       <h4><a class="text-dark" href="/recipes/{{recipe.id}}">{{recipe.title}}</a></h4>
+      <p>{{recipe.description}}</p>
       <p>{{recipe.ingredients}}</p>
       <p>{{recipe.instructions}}</p>
+
     </div>
     <div class="col-md-4 mx-auto recipe-list">
-      <button type="submit" class="btn btn-sm btn-danger mb-3 mt-3" data-id="{{recipe.id}}">DELETE</button>
+      <button type="submit" class="btn btn-sm btn-danger mb-3 mt-3 fs-5" data-id="{{recipe.id}}">Delete</button>
     </div>
   </div>
   {{/each}}
