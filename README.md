@@ -14,11 +14,13 @@
 
 ## [Description](#table-of-contents)
 
-Dynamic Dishes is a full-stack application that allows users to discover and rate recipes shared by other users, and even add their own! Users are able to add their own recipes and rate existing ones by creating an account. This application is full-stack because users are able to interact with live HTML pages on the frontend while user input and account information is stored in the application's database on the backend. User-generated passwords are secured through bcrypt. HTML pages are rendered using express-handlebars. 
+Dynamic Dishes is a full-stack application that allows users to discover and rate recipes shared by other users, and even add their own! Users are able to add their own recipes and rate existing ones by creating an account. This application is full-stack because users are able to interact with live HTML pages on the frontend while user input and account information is stored in the application's database on the backend. User-generated passwords are secured through bcrypt. HTML pages are rendered using express-handlebars. Below is a screenshot of the the app's login page:
+
+![screenshot](/assets/dynamic-dishes.png)
 
 ## [Installation](#table-of-contents)
 
-Packages required: express, express-session, mysql2, sequelize, connect-session-sequelize, dotenv, and bcrypt. The application is deployed using Heroku. Additional technologies include: dayjs & bootstrap.
+Packages required: express, express-session, mysql2, sequelize, connect-session-sequelize, dotenv, and bcrypt. Additional technologies include: dayjs & bootstrap. The application is deployed using Heroku.
 
 ## [Usage](#table-of-contents)
 
